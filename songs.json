@@ -1,0 +1,66 @@
+{
+    "songs": [
+      {
+        "title": "Heather",
+        "artist": "Conan Gray",
+        "year": 2020,
+        "genres": ["Indie", "Pop"]
+      },
+      {
+        "title": "Die For You",
+        "artist": "Weekend",
+        "year": 2016,
+        "genres": ["Rock", "Hip-Hop", "R&B/Soul"]
+      },
+      {
+        "title": "Love Story",
+        "artist": "Taylor Swift",
+        "year": 2008,
+        "genres": ["Pop", "Country-pop"]
+      },
+      {
+        "title": "Deja Vu",
+        "artist": "Olivia Rodrigo",
+        "year": 1991,
+        "genres": ["Pop", "Indie", "R&B/Soul"]
+      },
+      {
+        "title": "My Heart Will Go On",
+        "artist": "Celine Dion",
+        "year": 1997,
+        "genres": ["Rock", "Pop"]
+      },
+      {
+        "title": "7 Rings",
+        "artist": "Ariana  Grande",
+        "year": 2019,
+        "genres": ["Hip-Hop", "Pop", "R&B/Soul"]
+      },
+      {
+        "title": "Blood, Sweat and Tears",
+        "artist": "BTS",
+        "year": 2016,
+        "genres": ["Rock", "Pop", "Kpop"]
+      },
+      {
+        "title": "Playing With Fire",
+        "artist": "Black Pink",
+        "year": 2016,
+        "genres": ["Kpop", "Pop"]
+      },
+      {
+        "title": "BTBT",
+        "artist": "B.I.",
+        "year": 2022,
+        "genres": ["Hip-Hop", "Pop", "Kpop"]
+      },
+      {
+        "title": "ISabella's Lullaby",
+        "artist": "Takahiro Obata",
+        "year": 2019,
+        "genres": ["Country-pop", "R&B/Soul", "Rock"]
+      }
+
+    ]
+}
+  

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2> <i>Filter Songs by Genre</i></h2>
+    <form id="genreForm">
+        <label for="genreSelect">Select Genre:</label>
+        <select id="genreSelect" name="genre">
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    <div id="filteredSongs">
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $.getJSON("songs.json", function(data) {
+                var genres = [];
+
+                $.each(data.songs, function(index, song) {
+                    $.each(song.genres, function(index, genre) {
+                        if ($.inArray(genre, genres) === -1) {
+                            genres.push(genre);
+                        }
+                    });
+                });
+
+                $.each(genres, function(index, genre) {
+                    $('#genreSelect').append($('<option>', {
+                        value: genre,
+                        text: genre
+                    }));
+                });
+            });
+
+            $('#genreForm').submit(function(event) {
+                event.preventDefault();
+                var selectedGenre = $('#genreSelect').val();
+
+                $.getJSON("songs.json", function(data) {
+                    var filteredSongs = data.songs.filter(function(song) {
+                        return $.inArray(selectedGenre, song.genres) !== -1;
+                    });
+
+                    var filteredSongTitles = '';
+                    $.each(filteredSongs, function(index, song) {
+                        filteredSongTitles += song.title + '<br>';
+                    });
+                    $('#filteredSongs').html('<h2><i>Here you go:<i></h3>' + filteredSongTitles);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

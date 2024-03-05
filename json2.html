@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .song {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .song h3 {
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .song p {
+            margin: 5px 0;
+            padding: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div id="songList"></div>
+
+<script>
+$(document).ready(function() {
+    $.get('songs.json', function(data) {
+        var html = '';
+        data.songs.forEach(function(song) {
+            html += '<div class="song">';
+            html += '<h3>' + song.title + '</h3>';
+            html += '<p>Artist: ' + song.artist + '</p>';
+            html += '<p>Genre: ' + song.genres.join(', ') + '</p>';
+            html += '<p>Released ' + song.year + '</p>';
+            html += '</div>';
+        });
+        $('#songList').html(html);
+    }, 'json');
+});
+</script>
+
+</body>
+</html>
